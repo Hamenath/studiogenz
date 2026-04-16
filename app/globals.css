@@ -1,26 +1,188 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Orbitron', 'Inter', sans-serif;
+
+  /* Spacing System Tokens */
+  --space-8: 0.5rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-120: 7.5rem;
+
+  /* Layout Boundaries */
+  --max-width: 1200px;
+  --container-padding: 1.5rem;
+
+  /* Brand Colors */
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-glow: rgba(139, 92, 246, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 1024px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --container-padding: 48px;
   }
 }
 
+html, body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  background: #000000;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+p {
+  font-weight: 400;
+  color: #9ba3af; /* text-gray-400 equivalent */
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.glow-violet {
+  text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.bg-glow-violet {
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* ==========================================
+   LAYOUT UTILITIES
+   ========================================== */
+
+@layer components {
+  .container-apple {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  /* 12-Column Grid System */
+  .grid-apple {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: var(--space-24);
+  }
+
+  @media (min-width: 768px) {
+    .grid-apple {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-apple {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 32px;
+    }
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border-radius: 20px;
+  }
+}
+
+/* ==========================================
+   BRAND TEXT
+   ========================================== */
+
+.gradient-text-violet {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary-dark {
+  background-color: #7c3aed; /* violet-600 */
+  color: #ffffff;
+  padding: 1rem 2rem; /* px-8 py-4 */
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem; /* text-xs */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+.btn-primary-dark:hover {
+  background-color: #8b5cf6; /* violet-500 */
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.5);
+}
+
+@keyframes thunder-flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.8)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 5px rgba(167, 139, 250, 0.4)) drop-shadow(0 0 10px rgba(139, 92, 246, 0.2));
+  }
+  21%, 64.5% {
+    opacity: 1;
+    filter: drop-shadow(0 0 30px rgba(167, 139, 250, 1)) drop-shadow(0 0 80px rgba(139, 92, 246, 0.9)) brightness(2);
+  }
+}
+
+.animate-thunder {
+  animation: thunder-flicker 5s linear infinite;
+}
+
+@keyframes scroll-streak {
+  0% { transform: translateY(-100%); }
+  50%, 100% { transform: translateY(100%); }
 }
