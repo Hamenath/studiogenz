@@ -22,6 +22,27 @@
   --accent: #8b5cf6;
   --accent-light: #a78bfa;
   --accent-glow: rgba(139, 92, 246, 0.3);
+
+  /* Light Theme Colors (Default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --text-muted: #4b5563;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(0, 0, 0, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 1024px) {
@@ -41,8 +62,9 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  color: #ffffff;
-  background: #000000;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @media (min-width: 1024px) {
@@ -57,13 +79,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 p {
   font-weight: 400;
-  color: #9ba3af; /* text-gray-400 equivalent */
+  color: var(--text-muted);
 }
+
 
 .section-label {
   font-family: var(--font-sans);
@@ -121,10 +144,10 @@ p {
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--glass-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--glass-border);
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     border-radius: 20px;
   }

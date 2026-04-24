@@ -44,7 +44,7 @@ export default function Portfolio() {
   const activeProject = projects.find(p => p.id === selectedId)
 
   return (
-    <section id="portfolio" className="section-padding bg-black relative">
+    <section id="portfolio" className="section-padding bg-(--bg-primary) relative transition-colors duration-500">
       <div className="container-apple">
         
         {/* Header */}
@@ -55,9 +55,9 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 flex flex-col gap-4"
         >
-          <div className="section-label text-violet-400 mx-auto">Our Work</div>
-          <h2 className="font-display font-900 text-[clamp(2rem,5vw,3.5rem)] uppercase tracking-tighter text-white">
-            Selected <span className="text-violet-400">Projects</span>
+          <div className="section-label text-violet-500 mx-auto">Our Work</div>
+          <h2 className="font-display font-900 text-[clamp(2rem,5vw,3.5rem)] uppercase tracking-tighter text-(--text-primary)">
+            Selected <span className="text-violet-500">Projects</span>
           </h2>
         </motion.div>
 
@@ -74,13 +74,13 @@ export default function Portfolio() {
               key={project.id}
               variants={itemVariants}
               onClick={() => setSelectedId(project.id)}
-              className="group relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-2xl border border-white/10 bg-white/5"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-2xl border border-(--border-color) bg-(--bg-secondary)"
             >
               <div className="aspect-4/3 w-full overflow-hidden">
                 <img 
                   src={project.img} 
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover transition-all duration-700"
                 />
               </div>
               
@@ -113,7 +113,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                className="relative w-full max-w-4xl bg-neutral-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                className="relative w-full max-w-4xl bg-(--bg-primary) rounded-3xl overflow-hidden shadow-2xl border border-(--border-color)"
               >
                 {/* Close Button */}
                 <button 
@@ -132,10 +132,10 @@ export default function Portfolio() {
                 </div>
                 
                 <div className="p-8 text-center">
-                  <h3 className="font-display font-900 text-2xl uppercase tracking-tighter text-white mb-2">
+                  <h3 className="font-display font-900 text-2xl uppercase tracking-tighter text-(--text-primary) mb-2">
                     {activeProject.title}
                   </h3>
-                  <p className="text-gray-400 font-medium text-sm">
+                  <p className="text-(--text-muted) font-medium text-sm">
                     {activeProject.desc}
                   </p>
                 </div>
@@ -146,5 +146,6 @@ export default function Portfolio() {
 
       </div>
     </section>
+
   )
 }

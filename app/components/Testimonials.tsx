@@ -49,7 +49,7 @@ const itemVariants: Variants = {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="section-padding bg-black relative overflow-hidden">
+    <section id="testimonials" className="section-padding bg-(--bg-primary) relative overflow-hidden transition-colors duration-500">
       <div className="container-apple relative z-10">
         
         {/* Header */}
@@ -60,9 +60,9 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 flex flex-col gap-4"
         >
-          <div className="section-label text-violet-400 mx-auto">Feedback</div>
-          <h2 className="font-display font-900 text-[clamp(1.8rem,4vw,3rem)] uppercase tracking-tighter text-white">
-            Trusted by <span className="text-violet-400">Innovators.</span>
+          <div className="section-label text-violet-500 mx-auto">Feedback</div>
+          <h2 className="font-display font-900 text-[clamp(1.8rem,4vw,3rem)] uppercase tracking-tighter text-(--text-primary)">
+            Trusted by <span className="text-violet-500">Innovators.</span>
           </h2>
         </motion.div>
 
@@ -78,7 +78,7 @@ export default function Testimonials() {
             <motion.div 
               key={i}
               variants={itemVariants}
-              className="group relative flex flex-col p-10 rounded-3xl bg-white/5 border border-white/10 shadow-2xl transition-all duration-300 ease-out h-full text-center hover:bg-white/10"
+              className="group relative flex flex-col p-10 rounded-3xl bg-(--bg-secondary) border border-(--border-color) shadow-2xl transition-all duration-300 ease-out h-full text-center hover:bg-(--bg-primary)"
             >
               {/* Profile Bar */}
               <div className="flex flex-col items-center mb-6">
@@ -86,8 +86,8 @@ export default function Testimonials() {
                   {t.initials}
                 </div>
                 <div>
-                  <h4 className="font-display font-900 text-base uppercase tracking-tight text-white">{t.name}</h4>
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">{t.role}</p>
+                  <h4 className="font-display font-900 text-base uppercase tracking-tight text-(--text-primary)">{t.name}</h4>
+                  <p className="text-[10px] font-bold text-(--text-muted) uppercase tracking-widest mt-1">{t.role}</p>
                 </div>
               </div>
 
@@ -102,7 +102,7 @@ export default function Testimonials() {
 
               {/* Quote */}
               <div className="flex-1">
-                <p className="text-gray-400 text-base leading-relaxed font-medium max-w-xs mx-auto italic">
+                <p className="text-(--text-muted) text-base leading-relaxed font-medium max-w-xs mx-auto italic">
                   "{t.quote}"
                 </p>
               </div>
@@ -112,5 +112,6 @@ export default function Testimonials() {
 
       </div>
     </section>
+
   )
 }

@@ -37,7 +37,7 @@ export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', phone: '', type: '', message: '' })
 
   return (
-    <section ref={containerRef} id="contact" className="relative section-padding bg-black text-white overflow-hidden border-t border-white/5">
+    <section ref={containerRef} id="contact" className="relative section-padding bg-(--bg-primary) text-(--text-primary) overflow-hidden border-t border-(--border-color) transition-colors duration-500">
       {/* Subtle Ambient Glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none opacity-20"
         style={{ background: 'radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.1) 0%, transparent 70%)' }} />
@@ -53,37 +53,37 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col gap-8 max-w-[400px]"
           >
-            <motion.div variants={itemVariants} className="section-label text-violet-400">Connect</motion.div>
-            <motion.h2 variants={itemVariants} className="font-display font-900 text-[clamp(2.5rem,6vw,4.5rem)] leading-none tracking-tighter uppercase">
-              Let's <span className="text-violet-400">Work</span> Together.
+            <motion.div variants={itemVariants} className="section-label text-violet-500">Connect</motion.div>
+            <motion.h2 variants={itemVariants} className="font-display font-900 text-[clamp(2.5rem,6vw,4.5rem)] leading-none tracking-tighter uppercase text-(--text-primary)">
+              Let's <span className="text-violet-500">Work</span> Together.
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-gray-400 text-lg leading-relaxed">
+            <motion.p variants={itemVariants} className="text-(--text-muted) text-lg leading-relaxed">
               Tell us about your project. We'll get back quickly.
             </motion.p>
 
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="flex items-center gap-5 group">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 ease-out">
+                <div className="w-12 h-12 rounded-2xl bg-(--bg-secondary) border border-(--border-color) flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 ease-out">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-violet-400 tracking-[0.2em] uppercase mb-0.5">Email Us</p>
-                  <p className="text-sm font-bold tracking-tight text-white">contact@studiogenz.com</p>
+                  <p className="text-[10px] font-bold text-violet-500 tracking-[0.2em] uppercase mb-0.5">Email Us</p>
+                  <p className="text-sm font-bold tracking-tight text-(--text-primary)">contact@studiogenz.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-5 group">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 ease-out">
+                <div className="w-12 h-12 rounded-2xl bg-(--bg-secondary) border border-(--border-color) flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 ease-out">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-violet-400 tracking-[0.2em] uppercase mb-0.5">Our Base</p>
-                  <p className="text-sm font-bold tracking-tight uppercase text-white">Tamil Nadu, India</p>
+                  <p className="text-[10px] font-bold text-violet-500 tracking-[0.2em] uppercase mb-0.5">Our Base</p>
+                  <p className="text-sm font-bold tracking-tight uppercase text-(--text-primary)">Tamil Nadu, India</p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="text-[11px] font-bold text-white/20 tracking-widest uppercase mt-8 pt-8 border-t border-white/10">
+            <motion.p variants={itemVariants} className="text-[11px] font-bold text-(--text-muted)/50 tracking-widest uppercase mt-8 pt-8 border-t border-(--border-color)">
               Fast response. Clear process.
             </motion.p>
           </motion.div>
@@ -102,14 +102,14 @@ export default function Contact() {
                   <input 
                     type="text" 
                     placeholder="Full Name"
-                    className="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm"
+                    className="w-full px-5 py-4 rounded-2xl bg-(--bg-secondary) border border-(--border-color) text-(--text-primary) placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm"
                   />
                 </div>
                 <div className="space-y-2">
                   <input 
                     type="email" 
                     placeholder="Email Address"
-                    className="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm"
+                    className="w-full px-5 py-4 rounded-2xl bg-(--bg-secondary) border border-(--border-color) text-(--text-primary) placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm"
                   />
                 </div>
               </div>
@@ -119,18 +119,18 @@ export default function Contact() {
                   <input 
                     type="tel" 
                     placeholder="Phone (Optional)"
-                    className="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm"
+                    className="w-full px-5 py-4 rounded-2xl bg-(--bg-secondary) border border-(--border-color) text-(--text-primary) placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm"
                   />
                 </div>
                 <div className="space-y-2">
                   <select 
                     value={formState.type}
                     onChange={e => setFormState(p => ({ ...p, type: e.target.value }))}
-                    className="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm appearance-none cursor-pointer"
+                    className="w-full px-5 py-4 rounded-2xl bg-(--bg-secondary) border border-(--border-color) text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm appearance-none cursor-pointer"
                   >
-                    <option value="" disabled className="bg-black">Project Type</option>
+                    <option value="" disabled className="bg-white">Project Type</option>
                     {projectTypes.map(type => (
-                      <option key={type} value={type} className="bg-neutral-900 text-white">{type}</option>
+                      <option key={type} value={type} className="bg-white text-black">{type}</option>
                     ))}
                   </select>
                 </div>
@@ -140,16 +140,17 @@ export default function Contact() {
                 <textarea 
                   placeholder="Your Message"
                   rows={4}
-                  className="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm resize-none"
+                  className="w-full px-5 py-4 rounded-2xl bg-(--bg-secondary) border border-(--border-color) text-(--text-primary) placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-300 text-sm resize-none"
                 />
               </div>
 
-              <button className="w-full py-5 rounded-full bg-violet-600 hover:bg-white hover:text-black font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-300 ease-out hover:scale-[1.02] shadow-xl shadow-violet-500/10">
+              <button className="w-full py-5 rounded-full bg-violet-600 hover:bg-black hover:text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-300 ease-out hover:scale-[1.02] shadow-xl shadow-violet-500/10">
                 <span>Send Message</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
           </motion.div>
+
 
         </div>
       </div>

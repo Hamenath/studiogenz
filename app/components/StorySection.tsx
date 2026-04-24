@@ -43,7 +43,7 @@ const itemVariants: Variants = {
 
 export default function StorySection() {
   return (
-    <section id="how-it-works" className="section-padding bg-black relative overflow-hidden">
+    <section id="how-it-works" className="section-padding bg-(--bg-primary) relative overflow-hidden transition-colors duration-500">
       <div className="container-apple relative z-10">
         
         {/* Section Header */}
@@ -54,9 +54,9 @@ export default function StorySection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-24 flex flex-col gap-4"
         >
-          <div className="section-label text-violet-400 mx-auto">Process</div>
-          <h2 className="font-display font-900 text-[clamp(1.8rem,4vw,2.5rem)] uppercase tracking-tighter text-white">
-            Our Creative <span className="text-violet-400">Process.</span>
+          <div className="section-label text-violet-500 mx-auto">Process</div>
+          <h2 className="font-display font-900 text-[clamp(1.8rem,4vw,2.5rem)] uppercase tracking-tighter text-(--text-primary)">
+            Our Creative <span className="text-violet-500">Process.</span>
           </h2>
         </motion.div>
 
@@ -70,7 +70,7 @@ export default function StorySection() {
         >
           
           {/* Subtle Connecting Line (Desktop Only) */}
-          <div className="hidden md:block absolute top-[22px] left-0 w-full h-px bg-white/10 z-0" />
+          <div className="hidden md:block absolute top-[22px] left-0 w-full h-px bg-(--border-color) z-0" />
 
           {steps.map((step) => (
             <motion.div key={step.id} variants={itemVariants} className="relative z-10 group">
@@ -78,17 +78,17 @@ export default function StorySection() {
               <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
                 
                 {/* Number Circle */}
-                <div className="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center font-display font-900 text-xs mb-2 shadow-xl group-hover:scale-110 group-hover:bg-violet-500 group-hover:text-white transition-all duration-300 ease-out">
+                <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center font-display font-900 text-xs mb-2 shadow-xl group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 ease-out">
                   {step.id}
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display font-900 text-xl uppercase tracking-tight text-white">
+                <h3 className="font-display font-900 text-xl uppercase tracking-tight text-(--text-primary)">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed max-w-[240px]">
+                <p className="text-sm md:text-base text-(--text-muted) font-medium leading-relaxed max-w-[240px]">
                   {step.desc}
                 </p>
 
@@ -101,3 +101,4 @@ export default function StorySection() {
     </section>
   )
 }
+

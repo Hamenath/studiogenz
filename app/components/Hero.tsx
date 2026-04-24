@@ -20,7 +20,7 @@ export default function Hero() {
     <section 
       ref={containerRef}
       id="hero" 
-      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black px-6"
+      className="dark-theme relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black px-6"
     >
       
       {/* LAYER 1: Cinematic Ground (z-0) */}
@@ -60,7 +60,7 @@ export default function Hero() {
                  duration: 0.7,
                  ease: [0.215, 0.61, 0.355, 1] // Quad easeOut
                }}
-               className="font-display font-900 text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-tighter text-white uppercase"
+               className="font-display font-900 text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-violet-400 to-violet-700 uppercase"
              >
                {word}
              </motion.h1>

@@ -91,7 +91,7 @@ export default function Pricing() {
   const sectionRef = useRef<HTMLElement>(null)
 
   return (
-    <section ref={sectionRef} id="pricing" className="min-h-screen flex flex-col justify-center section-padding bg-black relative overflow-hidden">
+    <section ref={sectionRef} id="pricing" className="min-h-screen flex flex-col justify-center section-padding bg-(--bg-primary) relative overflow-hidden transition-colors duration-500">
       <div className="container-apple relative z-10">
         
         {/* Header */}
@@ -102,10 +102,10 @@ export default function Pricing() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 flex flex-col gap-4"
         >
-          <div className="section-label text-violet-400 mx-auto">Plans</div>
-          <h2 className="font-display font-900 text-[clamp(2rem,5vw,3.5rem)] leading-none uppercase tracking-tighter text-white content-heading">
+          <div className="section-label text-violet-500 mx-auto">Plans</div>
+          <h2 className="font-display font-900 text-[clamp(2rem,5vw,3.5rem)] leading-none uppercase tracking-tighter text-(--text-primary) content-heading">
             Simple Pricing.<br />
-            <span className="text-violet-400">Scalable Solutions.</span>
+            <span className="text-violet-500">Scalable Solutions.</span>
           </h2>
         </motion.div>
 
@@ -122,10 +122,10 @@ export default function Pricing() {
               key={plan.name}
               variants={cardVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className={`group relative flex flex-col p-8 rounded-3xl bg-white/5 border transition-all duration-300 ease-out hover:shadow-2xl text-left ${
+              className={`group relative flex flex-col p-8 rounded-3xl bg-(--bg-secondary) border transition-all duration-300 ease-out hover:shadow-2xl text-left ${
                 plan.popular 
                 ? 'border-violet-500 ring-4 ring-violet-500/5 z-10 scale-[1.02] md:scale-[1.05]' 
-                : 'border-white/10'
+                : 'border-(--border-color)'
               }`}
             >
               {plan.popular && (
@@ -135,13 +135,13 @@ export default function Pricing() {
               )}
 
               <div className="mb-8">
-                <h3 className="font-display font-900 text-lg uppercase tracking-wider text-white mb-2">
+                <h3 className="font-display font-900 text-lg uppercase tracking-wider text-(--text-primary) mb-2">
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-start gap-1">
-                  <span className="text-3xl font-900 text-white">{plan.price}</span>
+                  <span className="text-3xl font-900 text-(--text-primary)">{plan.price}</span>
                 </div>
-                <p className="text-xs text-gray-400 mt-3 font-medium leading-relaxed">
+                <p className="text-xs text-(--text-muted) mt-3 font-medium leading-relaxed">
                   {plan.desc}
                 </p>
               </div>
@@ -152,7 +152,7 @@ export default function Pricing() {
                     <div className={`mt-1 shrink-0 ${plan.popular ? 'text-violet-500' : 'text-gray-500'}`}>
                       <Check className="w-3.5 h-3.5" strokeWidth={3} />
                     </div>
-                    <span className="text-[13px] font-medium text-gray-400 leading-tight">
+                    <span className="text-[13px] font-medium text-(--text-muted) leading-tight">
                       {feature}
                     </span>
                   </div>
@@ -162,8 +162,8 @@ export default function Pricing() {
               <button 
                 className={`w-full py-4 rounded-2xl text-[11px] font-900 tracking-widest uppercase transition-all duration-300 ease-out flex items-center justify-center gap-2 ${
                   plan.popular
-                  ? 'bg-violet-600 text-white hover:bg-white hover:text-black shadow-lg shadow-violet-500/20'
-                  : 'bg-white text-black hover:bg-violet-600 hover:text-white shadow-lg'
+                  ? 'bg-violet-600 text-white hover:bg-black hover:text-white shadow-lg shadow-violet-500/20'
+                  : 'bg-black text-white hover:bg-violet-600 hover:text-white shadow-lg'
                 }`}
               >
                 {plan.cta}
@@ -179,12 +179,13 @@ export default function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="text-center mt-12 text-[11px] font-bold text-gray-500 uppercase tracking-widest"
+          className="text-center mt-12 text-[11px] font-bold text-(--text-muted) uppercase tracking-widest"
         >
-          Questions? <a href="#contact" className="text-violet-400 border-b border-violet-400 pb-0.5">Contact our team</a>
+          Questions? <a href="#contact" className="text-violet-500 border-b border-violet-500 pb-0.5">Contact our team</a>
         </motion.p>
 
       </div>
     </section>
+
   )
 }
