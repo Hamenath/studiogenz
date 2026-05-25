@@ -5,10 +5,10 @@ import { motion, Variants } from 'framer-motion'
 
 const testimonials = [
   {
-    initials: 'AR',
-    name: 'Allwin Roger',
-    role: 'CEO, iDEED',
-    quote: 'Studio GENZ changed our entire brand look. Clean design. Fast work. Super professional.',
+    initials: 'DH',
+    name: 'Dharvin',
+    role: 'Student, AI&DS',
+    quote: 'The AI&DS farewell photo frame designed by Studio GENZ is super detailed. An absolute masterpiece!',
     color: 'bg-purple-100 text-purple-600'
   },
   {

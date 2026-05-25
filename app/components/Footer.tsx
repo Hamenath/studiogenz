@@ -56,10 +56,25 @@ const Linkedin = ({ className }: { className?: string }) => (
   </svg>
 );
 
+import Link from "next/link";
+
 const links = {
-  Company: ["About", "Portfolio", "Pricing", "Contact"],
-  Services: ["Brand Identity", "Web Design", "App UI", "Campaign Design"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Company: [
+    { name: "About", path: "/about" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Contact Us", path: "/#contact" },
+  ],
+  Services: [
+    { name: "Brand Identity", path: "/services/brand-identity" },
+    { name: "Web Design", path: "/services/web-design" },
+    { name: "App UI", path: "/services/app-ui" },
+    { name: "Campaign Design", path: "/services/campaign-design" },
+  ],
+  Legal: [
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms of Service", path: "/terms-of-service" },
+    { name: "Cookie Policy", path: "/cookie-policy" },
+  ],
 };
 
 export default function Footer() {
@@ -76,9 +91,9 @@ export default function Footer() {
 
       <div className="container-apple relative z-10">
         {/* Footer nav */}
-        <div className="py-16 grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div className="py-10 sm:py-14 md:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
           {/* Brand */}
-          <div className="v-rhythm-sm">
+          <div className="col-span-1 sm:col-span-2 md:col-span-1 v-rhythm-sm">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg overflow-hidden bg-white flex items-center justify-center">
                 <img
@@ -98,13 +113,15 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 pt-4">
               {[
-                { Icon: Instagram, href: "#", label: "Instagram" },
-                { Icon: Twitter, href: "#", label: "Twitter" },
-                { Icon: Linkedin, href: "#", label: "LinkedIn" },
+                { Icon: Instagram, href: "https://www.instagram.com/_.genz_studio._?igsh=NWlwemQ2NWx0dWQ2", label: "Instagram" },
+                { Icon: Twitter, href: "https://x.com/HamenathOffi", label: "Twitter" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/hamenathbdesigner", label: "LinkedIn" },
               ].map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   className="text-white/30 hover:text-white transition-colors"
                 >
@@ -118,17 +135,27 @@ export default function Footer() {
           {Object.entries(links).map(([section, items]) => (
             <div key={section}>
               <p className="text-[10px] font-900 tracking-widest uppercase text-blue-500 mb-6">
-                {section}
+                {section === "Services" ? (
+                  <Link href="/services" className="hover:text-white transition-colors">
+                    {section}
+                  </Link>
+                ) : section === "Legal" ? (
+                  <Link href="/legal" className="hover:text-white transition-colors">
+                    {section}
+                  </Link>
+                ) : (
+                  section
+                )}
               </p>
               <ul className="space-y-3">
                 {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
+                  <li key={item.name}>
+                    <Link
+                      href={item.path}
                       className="text-[13px] font-500 text-white/40 hover:text-white transition-colors duration-200"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>

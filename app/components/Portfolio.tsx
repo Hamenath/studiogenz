@@ -5,16 +5,14 @@ import { Plus, X } from 'lucide-react'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 
 const projects = [
-  { id: 1, title: 'MODERN BRANDING', desc: 'Minimal identity for tech startup', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, title: 'CLEAN UI', desc: 'SaaS dashboard with high-retention UX', img: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, title: 'FINTECH LANDING', desc: 'Conversion focused banking site', img: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, title: 'FASHION PORTAL', desc: 'Editorial ecommerce platform', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800' },
-  { id: 5, title: 'MOBILE APP', desc: 'Next-gen social experience design', img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800' },
-  { id: 6, title: 'AGENCY SITE', desc: 'Clean portfolio for creative studio', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800' },
-  { id: 7, title: '3D SHOWCASE', desc: 'Immersive product landing page', img: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800' },
-  { id: 8, title: 'COFFEE BRAND', desc: 'Organic packaging and web identity', img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800' },
-  { id: 9, title: 'TECH LOGO', desc: 'Geometric mark for robotics firm', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800' },
-  { id: 10, title: 'DESIGN SYSTEM', desc: 'Atomic design library for enterprise', img: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&q=80&w=800' },
+  { id: 1, title: 'TRADITIONAL WEDDING STORY', desc: 'Aesthetic traditional couple portraiture', img: '/pic.JPG' },
+  { id: 2, title: 'SACRED RITUALS PORTRAIT', desc: 'Macro ritual photography close-up', img: '/pic 2.JPG' },
+  { id: 3, title: 'COOLIE CAMPAIGN POSTER', desc: 'High-impact cinematic poster concept', img: '/pic 3.jpg' },
+  { id: 4, title: 'BUTTERFLY SYMPHONY', desc: 'Creative outdoor fantasy photography', img: '/pic 4.jpg' },
+  { id: 5, title: 'WARM LIGHTS EMBRACE', desc: 'Romantic fairy lights pre-wedding shoot', img: '/pic 5.jpg' },
+  { id: 6, title: 'VISUALIZE \'26 CAMPAIGN', desc: 'National level hackathon event brand', img: '/pic 6.png' },
+  { id: 7, title: 'AI&DS GRADUATION STORY', desc: 'Together We Code yearbook collage', img: '/pic 7.png' },
+  { id: 8, title: 'LUNEWISE BRAND LOGO', desc: 'Infinity wave minimalist logo system', img: '/lunewise.png' },
 ]
 
 const containerVariants: Variants = {
@@ -67,7 +65,7 @@ export default function Portfolio() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6"
         >
           {projects.map((project) => (
             <motion.div 

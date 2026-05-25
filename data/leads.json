@@ -1,0 +1,50 @@
+[
+  {
+    "id": "lead_mhrbsqhoo_1779699165032",
+    "name": "Hamenath B",
+    "email": "hamenathmurali@gmail.com",
+    "phone": "08778707086",
+    "budget": "120",
+    "type": "Web Design",
+    "message": "i want ui\n",
+    "status": "New",
+    "createdAt": "2026-05-25T08:52:45.032Z",
+    "notes": ""
+  },
+  {
+    "id": "lead_pfyysgqz6_1779698925445",
+    "name": "Hamenath B",
+    "email": "hamenathmurali@gmail.com",
+    "phone": "08778707086",
+    "budget": "100",
+    "type": "Branding",
+    "message": "i want logo\n",
+    "status": "New",
+    "createdAt": "2026-05-25T08:48:45.445Z",
+    "notes": ""
+  },
+  {
+    "id": "lead_zzx3rn605_1779698788966",
+    "name": "hamenath",
+    "email": "test@gmail.com",
+    "phone": "8778707086",
+    "budget": "150",
+    "type": "marketing",
+    "message": "i want ADS",
+    "status": "New",
+    "createdAt": "2026-05-25T08:46:28.966Z",
+    "notes": ""
+  },
+  {
+    "id": "lead_304rxc1wa_1779698397071",
+    "name": "Hamenath B",
+    "email": "hamenathmurali@gmail.com",
+    "phone": "08778707086",
+    "budget": "100",
+    "type": "Branding",
+    "message": "i want logo",
+    "status": "New",
+    "createdAt": "2026-05-25T08:39:57.071Z",
+    "notes": ""
+  }
+]
